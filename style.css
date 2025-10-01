@@ -1,0 +1,232 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Main container */
+.weather-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* Search bar */
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#cityInput {
+    flex: 1;
+    padding: 12px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#cityInput:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+#searchBtn {
+    padding: 12px 30px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#searchBtn:hover {
+    background: #5a67d8;
+}
+
+/* Loading spinner */
+.loading {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error message */
+.error {
+    display: none;
+    background: #fee;
+    color: #c33;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Current weather */
+.current-weather {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.city-name {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.temperature {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.weather-description {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+
+.weather-details {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.detail-item {
+    text-align: center;
+}
+
+.detail-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.detail-value {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* 3-day forecast */
+.forecast-container {
+    display: none;
+}
+
+.forecast-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.forecast-card {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.forecast-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.forecast-date {
+    font-size: 1.1rem;
+    color: #667eea;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.forecast-temp {
+    font-size: 2rem;
+    color: #333;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.forecast-desc {
+    color: #666;
+    text-transform: capitalize;
+}
+
+.forecast-minmax {
+    margin-top: 10px;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Weather icon */
+.weather-icon {
+    font-size: 3rem;
+    margin: 10px 0;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .weather-details {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .forecast-grid {
+        grid-template-columns: 1fr;
+    }
+}
