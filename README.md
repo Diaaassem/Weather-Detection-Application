@@ -16,11 +16,10 @@ A sleek and simple web application that lets you search for any city and instant
 ## 🛠️ Tech Stack
 
 - **Frontend:** HTML, CSS, JavaScript
+- **Backend:** c#, Asp.Net Core 
 - **API:** OpenWeatherMap
 
 ---
-
-## ✨ Getting Started
 
 ## ⚡ Usage
 
